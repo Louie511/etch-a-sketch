@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>etch-a-sketch</title>
+    <script src="./script.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Wire+One&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        </style>
+</head>
+<body>
+    <h1><a href="https://www.theodinproject.com/lessons/foundations-etch-a-sketch">Etch-A-Sketch</a></h1>
+    <div class="container">
+        <div class="controls">
+            <div class="theColorPicker">
+                <label for="colorpicker">Click Me</label>
+                <input type="color" id="colorpicker" value="#db4646">
+            </div>
+            <div class="buttons">
+                <div class="topButton">
+                    <p>Canvas Color</p>
+                    <input type="color" id="backgroundColor" class="backgroundColor" value="#FCF5E5">
+                </div>
+                <div class="buttonsLeft">
+                    <button class="blackButton"></button>
+                    <button class="whiteButton"></button>
+                </div>
+                <div class="buttonsRight">
+                    <button class="rainbowButton"></button>
+                    <button class="resetButton">Reset</button>
+                </div>
+            </div>
+            <div class="theSlider">
+                <input type="range" min="1" max="100" value="16" class="slider" id="myRange" onchange="boardSize(this.value)">
+                <div id="bubble"></div>
+            </div> 
+        </div>
+        <div class="contents"></div>
+    </div>
+    <footer id="footer">
+        <div class="theFooter">Copyright© Louie Lixx</div>
+    </footer>
+</body>
+</html>
