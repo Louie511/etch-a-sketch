@@ -1,6 +1,6 @@
 let selectedColor = "#FCF5E5";
 let brushColor = "#db4646";
-let previousColor = "";
+let erasersColor = "";
 let isDrawing = false;
 let useRainbowColors = false;
 
@@ -53,8 +53,10 @@ function backgroundColor(){
     let contents = document.querySelector(".contents");
     let squares = contents.querySelectorAll("div");
     let colorValue = document.getElementById("backgroundColor");
+    const eraserButton = document.querySelector(".eraserButton");
 
     colorValue.addEventListener("input", function() {
+        eraserButton.style.backgroundColor = selectedColor;
         squares.forEach(function(square){
             square.style.backgroundColor = colorValue.value;
         });
@@ -68,13 +70,13 @@ document.querySelector(".resetButton").addEventListener("click", function(){
 });
 
 
-// White Color Button---
-function whiteColorButton (){
-    const whiteButton = document.querySelector(".whiteButton");
-
-    whiteButton.addEventListener("click", function(){
+// Eraser Button---
+function eraser (){
+    const eraserButton = document.querySelector(".eraserButton");
+    eraserButton.addEventListener("click", function(){
+        
         useRainbowColors = false;
-        brushColor = "rgb(255, 255, 255)";
+        brushColor = selectedColor;
     });
 };
 
@@ -147,7 +149,7 @@ function getCurrentColor(){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    whiteColorButton();
+    eraser();
     paintCanvas();
     blackColorButton();
     rainbowColorButton();
